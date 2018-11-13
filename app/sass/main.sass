@@ -1,2 +1,318 @@
-body
-	background-color: pink
+/*...common styles...*/
+.wrap-common-styles
+	width: 100%
+
+.common-wrapper__next-child
+	max-width: 980px
+	margin: 0 auto
+	padding: 0 10px
+/*...end common styles...*/
+
+/*...header...*/
+.header-wrap
+	padding: 65px 0
+	background-color: #dcdcdc
+
+.header
+	display: flex
+	justify-content: space-between
+	align-items: flex-end
+
+.about-company
+	display: flex
+
+	img
+		margin-right: 13px
+
+	div
+		padding: 8px 0 13px
+
+.company-name
+	font: 28px/25px 'PT Sans', sans-serif
+	font-weight: bold
+	color: #777777
+	margin-bottom: 20px
+
+.company-description
+	font: 14px 'PT Sans', sans-serif
+	font-weight: bold
+	color: #777777
+
+.header-contact
+	display: flex
+	flex-direction: column
+	align-items: flex-end
+
+.number-phone
+	font: 28px 'Open Sans Condensed', sans-serif
+	color: #868686
+
+.feedback
+	font: 18px 'PT Sans', sans-serif
+	font-weight: bold
+	color: #767676
+	letter-spacing: 1px
+
+	&:after
+		content: ''
+		display: block
+		border: none
+		border-top: 2px dashed #767676
+		//background-color: #767676
+		color: #fff
+		height: 1px
+		width: 100%
+/*...end header...*/
+
+/*...menu...*/
+.menu-wrap
+	background-color: #777777
+	padding: 25px 0
+
+.menu
+	display: flex
+	justify-content: center
+	align-items: center
+	li
+		list-style-type: none
+		margin-right: 20px
+		display: flex
+		align-items: center
+
+		&:after
+			content: ''
+			display: inline-block
+			width: 2px
+			height: 20px
+			background-color: #ffffff
+			margin-left: 20px
+
+		&:last-child
+			margin-right: 0
+
+			&:after
+				content: ''
+				display: none
+
+		a
+			font: 18px 'PT Sans', sans-serif
+			font-weight: 400
+			color: #ffffff
+			letter-spacing: 1px
+			border-bottom: 1px solid transparent
+			
+			&:hover
+				border-bottom: 1px solid #ffffff
+
+/*...end menu...*/
+
+/*...bread-crumbs...*/
+.bread-crumbs-wrap
+	padding: 10px 0
+
+.bread-crumbs-list
+	display: flex
+
+
+	li
+		margin-right: 10px
+
+	li.active
+		a
+			border-bottom: 1px solid #767676
+
+	a
+		font: 14px 'PT Sans', sans-serif
+		font-weight: 400
+		color: #767676
+
+/*...end bread-crumbs...*/
+
+/*...content...*/
+.content-wrap
+	padding-top: 20px
+	margin-bottom: 200px
+.content
+	display: flex
+	justify-content: space-between
+/*...sidebar...*/
+.left-block
+	width: 20.833333333333333333333333333333%
+	max-width: 200px
+	min-width: 190px
+
+.sidebar-title
+	font: 15px 'PT Sans', sans-serif
+	font-weight: 400
+	color: #767676
+	margin-bottom: 15px
+	
+.chose-category.active
+	.category
+		border-bottom: 1px solid #767676
+	.list-sup-category
+		display: block
+
+.category
+	font: 15px 'PT Sans', sans-serif
+	font-weight: 400
+	color: #767676
+	cursor: pointer
+
+.list-sup-category
+	margin-left: 20px
+	display: none
+	li
+		list-style-type: disc
+		color: #767676
+		a
+			font: 15px 'PT Sans', sans-serif
+			font-weight: 400
+			color: #767676
+
+			&:hover
+				border-bottom: 1px solid #767676
+
+.price-block
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	margin-top: 110px
+
+.price-title
+	font: 30px 'PT Sans', sans-serif
+	font-weight: 700
+	color: #444444
+
+/*...end sidebar...*/
+
+/*...main...*/
+.center-block
+	width: 90%
+
+	hr
+		margin-bottom: 30px
+		background-color: #777777
+
+.products-wrap
+	display: flex
+	flex-wrap: wrap
+	justify-content: flex-start
+	margin-bottom: 25px
+
+.product-block
+	width: 250px
+	padding: 15px 20px
+	background-color: #dcdcdc
+	transition: .2s
+	margin-top: 10px
+	margin-right: 10px
+
+	&:nth-child(3n)
+		margin-right: 0
+
+	&:hover
+		transform: scale(1.03, 1.03)
+
+	.product-icon
+		margin-bottom: 15px
+
+	p
+		font: 18px 'PT Sans', sans-serif
+		font-weight: 400
+		color: #868686
+		margin-bottom: 50px
+
+.product-price-block
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+.price-num
+	font: 28px 'PT Sans', sans-serif
+	font-weight: 700
+	color: #444444
+
+.tab-block
+	width: 100%
+	display: flex
+	justify-content: center
+	margin-bottom: 65px
+
+.tab-list
+	width: 30%
+	display: flex
+	justify-content: space-between
+	align-items: center
+	
+	li.active 
+		span 
+			font-size: 18px
+			color: #444444
+	
+	li
+		cursor: pointer
+		span
+			font: 14px 'PT Sans', sans-serif
+			font-weight: 400
+			color: #868686
+			margin-bottom: 50px
+
+.about-company__wrap-article
+	width: 100%
+	display: flex
+	justify-content: space-between
+
+.about-company__article
+	width: 47.435897435897435897435897435897%
+	font: 14px/23px 'PT Sans', sans-serif
+	font-weight: 400
+	color: #868686
+
+/*...end main...*/
+
+/*...end content*/
+
+/*...footer...*/
+.footer-wrap
+	padding: 45px 0 50px
+	background-color: #767676
+
+.footer
+	display: flex
+	justify-content: space-between
+
+.menu-and-copiright-wrap
+	width: 50%
+	display: flex
+	justify-content: space-between
+
+.copyright, .email, .footer-menu li a, .footer__company-name p
+	font: 14px/23px 'PT Sans', sans-serif
+	font-weight: 400
+	color: #ffffff
+
+.footer-menu
+	li
+		list-style-type: none
+
+		a
+			border-bottom: 2px solid #bababa
+
+.footer__company-name
+	wdith: 40%
+	display: flex
+
+	img
+		width: 36px
+		height: 38px
+		margin-right: 8px
+
+	p
+		margin-top: -5px
+
+		.underline
+			border-bottom: 2px solid #bababa
+
+/*...end footer...*/
