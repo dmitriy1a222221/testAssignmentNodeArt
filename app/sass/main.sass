@@ -106,6 +106,90 @@
 
 /*...end menu...*/
 
+/*...slider...*/
+.slider-overflow
+	width: 100%
+	overflow: hidden
+	position: relative
+
+.arrow-wrap-wrap
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	display: flex
+	justify-content: center
+	align-items: center
+	z-index: 9999
+
+.arrow-wrap
+	width: 100%
+	//position: absolute
+	//top: 50%
+	//left: 20%
+	display: flex
+	justify-content: space-between
+
+
+.btn-prev-block, .btn-next-block
+	position: relative
+	width: 35px
+	height: 60px
+	background-color: #d1d1d1
+	cursor: pointer
+
+	&:hover
+		opacity: .9
+
+	&:active
+		opacity: .7
+
+.arrow-prev
+	position: absolute
+	top: 40%
+	left: 20%
+	width: 15px
+	height: 3px
+	background-color: #000000
+	transform: rotate(-45deg)
+	&:after
+		position: absolute
+		top: 7px
+		right: 6px
+		content: ''
+		display: block
+		width: 15px
+		height: 3px
+		background-color: #000000
+		transform: rotate(90deg)
+
+.arrow-next
+	position: absolute
+	top: 40%
+	right: 20%
+	width: 15px
+	height: 3px
+	background-color: #000000
+	transform: rotate(45deg)
+	&:after
+		position: absolute
+		top: 7px
+		right: -7px
+		content: ''
+		display: block
+		width: 15px
+		height: 3px
+		background-color: #000000
+		transform: rotate(-90deg)
+
+
+.slide-list
+	display: flex
+	transition: transform .7s
+	padding: 0
+/*...end slider...*/
+
 /*...bread-crumbs...*/
 .bread-crumbs-wrap
 	padding: 10px 0
