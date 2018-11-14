@@ -82,6 +82,92 @@ class Slider {
 
 }
 
+class ValidateForm {
+    constructor(form, formElement) {
+        this.form = (form) ? document.querySelector(`${form}`) : undefined;
+        this.formElement = (formElement) ? this.form.querySelectorAll(`${formElement}`) : undefined;
+        this.types = {
+            'name': /^[_a-zA-Z0-9а-яА-ЯёЁ ]+$/,
+            'phone': /.+/,
+            'email': /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
+            'text': /.+/
+        };
+
+    }
+    validateLogic() {
+        this.formElement.forEach(item => {
+            item.addEventListener('focus', focus = () => {
+                item.style.cssText = 'border: 1px solid #8CACA4';
+                item.placeholder = '';
+                let regEx;
+                function valid() {
+                    if(!(regEx.test(item.value))){
+                        item.style.cssText = 'border: 1px solid #cf5402';
+                    } else {
+                        item.style.cssText = 'border: 1px solid #02cfb4';
+                    }
+                }
+                switch (item.dataset.id){
+                    case 'name':
+                        regEx = this.types.name;
+                        item.addEventListener('input', valid);
+                        break;
+                    case 'phone':
+                        regEx = this.types.phone;
+                        item.addEventListener('input', valid);
+                        break;
+                    case 'email':
+                        regEx = this.types.email;
+                        item.addEventListener('input', valid);
+                        break;
+                    case 'message':
+                        regEx = this.types.text;
+                        item.addEventListener('input', valid);
+                        break;
+                }
+
+            });
+            item.addEventListener('blur', function refocus() {
+                //let spanFocus = item.nextSibling.nextSibling;
+                if(item.value !== ''){
+                    item.style.cssText = 'border: 1px solid #2EC7A2';
+                } else {
+                    //spanFocus.classList.remove('span_focus');
+                    item.style.cssText = 'border: 1px solid #CD5312; box-shadow: inset 0px 0px 10px #CD5312;';
+                    item.placeholder = 'Поле обязательное для заполнения'
+                }
+            })
+        });
+    }
+}
+
+let feedbackFun = () => {
+    let el = document.querySelector('.feedback');
+    let feedbackBlock = document.querySelector('.feedback-modal-wrap');
+    let feedbackModal = document.querySelector('.feedback-modal');
+    let exit = document.querySelector('.exit');
+    let substrate = document.querySelector('.substrate');
+    el.addEventListener('click', () => {
+        feedbackBlock.style.visibility = 'visible';
+        feedbackModal.style.transform = 'translateY(0%)'
+    });
+    substrate.addEventListener('click', () => {
+        feedbackModal.style.transform = 'translateY(-150%)';
+        setTimeout(() => {
+            feedbackBlock.style.visibility = 'hidden';
+        }, 100)
+
+    });
+    exit.addEventListener('click', () => {
+        feedbackModal.style.transform = 'translateY(-150%)';
+        setTimeout(() => {
+            feedbackBlock.style.visibility = 'hidden';
+        }, 100)
+
+
+    })
+};
+
 let asideCategory = () => {
     let el = document.querySelectorAll('.category');
     el.forEach((item) => {
@@ -96,5 +182,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let slider = new Slider('.slide-list', '', '.slide-item', '', '.btn-prev-block', '.btn-next-block');
     slider.logicSlider();
 
+    let validform = new ValidateForm('.form', '[data-id]');
+    validform.validateLogic();
+
+    feedbackFun();
     asideCategory();
 });
